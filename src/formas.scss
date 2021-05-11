@@ -1,0 +1,48 @@
+// Configuration
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/utilities";
+
+// Layout & components
+//@import "root";
+//@import "reboot";
+//@import "type";
+//@import "images";
+//@import "containers";
+//@import "grid";
+//@import "tables";
+//@import "forms";
+@import "../node_modules/bootstrap/scss/buttons";
+//@import "transitions";
+//@import "dropdown";
+//@import "button-group";
+//@import "nav";
+//@import "navbar";
+//@import "card";
+//@import "accordion";
+//@import "breadcrumb";
+//@import "pagination";
+//@import "badge";
+//@import "alert";
+@import "../node_modules/bootstrap/scss/progress";
+//@import "list-group";
+//@import "close";
+//@import "toasts";
+//@import "modal";
+//@import "tooltip";
+//@import "popover";
+//@import "carousel";
+//@import "spinners";
+//@import "offcanvas";
+
+// Helpers
+//@import "helpers";
+
+// Utilities
+//@import "utilities/api";
+
+
+body{
+    color: blue;
+}

@@ -1,0 +1,29 @@
+{
+  "name": "1.primer-proyecto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "webpack serve --mode production",
+    "dev": "webpack --mode development",
+    "pro": "webpack --mode production",
+    "purge": "purgecss --css sass/*.css --content src/index.html src/*.js  -o src/index.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^5.0.0",
+    "css-loader": "^5.2.4",
+    "node-sass": "^6.0.0",
+    "popper": "^1.0.1",
+    "sass-loader": "^11.1.0",
+    "style-loader": "^2.0.0",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "devDependencies": {
+    "html-webpack-plugin": "^5.3.1",
+    "webpack": "^5.37.0",
+    "webpack-cli": "^4.7.0"
+  }
+}
