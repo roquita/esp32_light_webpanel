@@ -11,8 +11,9 @@ module.exports = merge(common, {
     {
         //contentBase: __dirname + "/build",
         index: 'login.html',
-        compress: false,
+        compress: true,
         port: 9000,
+
     },
 
 });
