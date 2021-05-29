@@ -4,9 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "serve": "webpack serve --mode production",
-    "dev": "webpack --mode development",
-    "pro": "webpack --mode production",
+    "start": "webpack serve --open --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
     "purge": "purgecss --css sass/*.css --content src/index.html src/*.js  -o src/index.css"
   },
   "keywords": [],
@@ -23,7 +22,10 @@
   },
   "devDependencies": {
     "html-webpack-plugin": "^5.3.1",
+    "mini-css-extract-plugin": "^1.6.0",
+    "purgecss-webpack-plugin": "^4.0.3",
     "webpack": "^5.37.0",
-    "webpack-cli": "^4.7.0"
+    "webpack-cli": "^4.7.0",
+    "webpack-merge": "^5.7.3"
   }
 }

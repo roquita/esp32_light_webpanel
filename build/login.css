@@ -1,0 +1,6 @@
+
+body{
+    background: yellow;
+}
+.btn{display:inline-block;font-weight:400;line-height:1.5;color:#212529;text-align:center;text-decoration:none;vertical-align:middle;cursor:pointer;user-select:none;background-color:transparent;border:1px solid transparent;padding:.375rem .75rem;font-size:1rem;border-radius:.25rem;transition:color 0.15s ease-in-out,background-color 0.15s ease-in-out,border-color 0.15s ease-in-out,box-shadow 0.15s ease-in-out}@media (prefers-reduced-motion: reduce){.btn{transition:none}}.btn:hover{color:#212529}.btn:focus{outline:0;box-shadow:0 0 0 .25rem rgba(13,110,253,0.25)}.btn:disabled{pointer-events:none;opacity:.65}.btn-danger{color:#fff;background-color:#dc3545;border-color:#dc3545}.btn-danger:hover{color:#fff;background-color:#bb2d3b;border-color:#b02a37}.btn-danger:focus{color:#fff;background-color:#bb2d3b;border-color:#b02a37;box-shadow:0 0 0 .25rem rgba(225,83,97,0.5)}.btn-danger:active{color:#fff;background-color:#b02a37;border-color:#a52834}.btn-danger:active:focus{box-shadow:0 0 0 .25rem rgba(225,83,97,0.5)}.btn-danger:disabled{color:#fff;background-color:#dc3545;border-color:#dc3545}
+
