@@ -1,0 +1,32 @@
+body {
+    background: whitesmoke;
+    height: 100vh;
+}
+
+.flex-fill-1 {
+    flex: 1;
+}
+
+.flex-fill-2 {
+    flex: 2;
+}
+
+.bg-purple {
+    background: purple;
+}
+
+#block1>div {
+    transition: transform 0.2s ease-in-out;
+}
+
+#block1>div>div>* :hover {
+    transform: scale(1.0);
+}
+
+#block2>div {
+    transition: transform 0.2s ease-in-out;
+}
+
+#block2>div>div>* :hover {
+    transform: scale(1.0);
+}

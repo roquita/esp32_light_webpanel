@@ -10,26 +10,23 @@ module.exports = merge(common, {
 
     devtool: 'source-map',
 
-    optimization: 
-    {
-        
-        minimizer: 
-        [
+    optimization: {
+
+        minimizer: [
             `...`,
             new CssMinimizerPlugin(),
         ],
 
     },
 
-    plugins:
-    [
+    plugins: [
         new CompressionPlugin({
             exclude: /.map$/,
             deleteOriginalAssets: 'keep-source-map',
             filename: '[base].gzip',
             algorithm: 'gzip',
-            test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$/,
-            threshold: 500,
+            test: /\.js$|\.css$|\.html$|\.eot?.+$|\.ttf?.+$|\.woff?.+$|\.svg?.+$|\.png?.+$/,
+            threshold: 0,
             minRatio: 0.8
         })
     ]

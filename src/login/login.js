@@ -1,23 +1,20 @@
 // Css and Scss added to entry point
 import "./login.css";
-import "./bootstrap_config.scss";
+import "./bootstrap.scss";
 
 // Js files added to entry poitn
 import "bootstrap/js/dist/button";
 
-// Assest files added to entry point
-//import Icon from './icon.png';
+const main_url = "main.html";
 
+var btn_login = document.getElementById("btn_login");
+btn_login.onclick = function() {
 
-var botoncito = document.getElementById("botoncito");
-//var button = new bootstrap.Button(botoncito);
-//button.toogle();
-botoncito.onclick = function () {
-/*
-    //printf();
-    var button = new bootstrap.Button(botoncito);
-    button.toogle();
-    */
-   console.log("holñaaaa");
+    console.log("boton ver_data");
+    location.href = main_url;
 }
 
+// ON LOAD 
+window.onload = function() {
+    document.getElementsByTagName("html")[0].style.visibility = "visible";
+};

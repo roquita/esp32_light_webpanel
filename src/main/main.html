@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" style="visibility: hidden;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<!-- border border-danger -->
+
+<body>
+    <div class="container-fluide  " style="height: 100vh;">
+        <div class="h-100 position-absolute w-100">
+            <div id="menu" class=" d-flex flex-row flex-lg-column h-100 ">
+                <div id="block1" class="d-flex flex-column block-dims ">
+
+                    <!-- SETTINGS -->
+                    <div id="settings_btn" class="flex-fill bg-info border btn">
+                        <div class="d-flex flex-column h-100 align-items-center justify-content-center text-white">
+                            <svg width="35" height="35" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z" />
+                                <path
+                                    d="M9.796 1.343c-.527-1.79-3.065-1.79-3.592 0l-.094.319a.873.873 0 0 1-1.255.52l-.292-.16c-1.64-.892-3.433.902-2.54 2.541l.159.292a.873.873 0 0 1-.52 1.255l-.319.094c-1.79.527-1.79 3.065 0 3.592l.319.094a.873.873 0 0 1 .52 1.255l-.16.292c-.892 1.64.901 3.434 2.541 2.54l.292-.159a.873.873 0 0 1 1.255.52l.094.319c.527 1.79 3.065 1.79 3.592 0l.094-.319a.873.873 0 0 1 1.255-.52l.292.16c1.64.893 3.434-.902 2.54-2.541l-.159-.292a.873.873 0 0 1 .52-1.255l.319-.094c1.79-.527 1.79-3.065 0-3.592l-.319-.094a.873.873 0 0 1-.52-1.255l.16-.292c.893-1.64-.902-3.433-2.541-2.54l-.292.159a.873.873 0 0 1-1.255-.52l-.094-.319zm-2.633.283c.246-.835 1.428-.835 1.674 0l.094.319a1.873 1.873 0 0 0 2.693 1.115l.291-.16c.764-.415 1.6.42 1.184 1.185l-.159.292a1.873 1.873 0 0 0 1.116 2.692l.318.094c.835.246.835 1.428 0 1.674l-.319.094a1.873 1.873 0 0 0-1.115 2.693l.16.291c.415.764-.42 1.6-1.185 1.184l-.291-.159a1.873 1.873 0 0 0-2.693 1.116l-.094.318c-.246.835-1.428.835-1.674 0l-.094-.319a1.873 1.873 0 0 0-2.692-1.115l-.292.16c-.764.415-1.6-.42-1.184-1.185l.159-.291A1.873 1.873 0 0 0 1.945 8.93l-.319-.094c-.835-.246-.835-1.428 0-1.674l.319-.094A1.873 1.873 0 0 0 3.06 4.377l-.16-.292c-.415-.764.42-1.6 1.185-1.184l.292.159a1.873 1.873 0 0 0 2.692-1.115l.094-.319z" />
+                            </svg>
+                            <div class="text-center ">
+                                Settings
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DATABASE -->
+                    <div id="database_btn" class="flex-fill bg-success border btn">
+                        <div class="d-flex flex-column h-100 align-items-center justify-content-center  text-white">
+                            <svg width="35" height="35" fill="currentColor" class="bi bi-server" viewBox="0 0 16 16">
+                                <path
+                                    d="M1.333 2.667C1.333 1.194 4.318 0 8 0s6.667 1.194 6.667 2.667V4c0 1.473-2.985 2.667-6.667 2.667S1.333 5.473 1.333 4V2.667z" />
+                                <path
+                                    d="M1.333 6.334v3C1.333 10.805 4.318 12 8 12s6.667-1.194 6.667-2.667V6.334a6.51 6.51 0 0 1-1.458.79C11.81 7.684 9.967 8 8 8c-1.966 0-3.809-.317-5.208-.876a6.508 6.508 0 0 1-1.458-.79z" />
+                                <path
+                                    d="M14.667 11.668a6.51 6.51 0 0 1-1.458.789c-1.4.56-3.242.876-5.21.876-1.966 0-3.809-.316-5.208-.876a6.51 6.51 0 0 1-1.458-.79v1.666C1.333 14.806 4.318 16 8 16s6.667-1.194 6.667-2.667v-1.665z" />
+                            </svg>
+                            <div class="text-center ">
+                                Database
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LOGS -->
+                    <div id="logs_btn" class="flex-fill bg-danger border btn">
+                        <div class="d-flex flex-column h-100 align-items-center justify-content-center  text-white">
+                            <svg width="35" height="35" fill="currentColor" class="bi bi-file-earmark-excel" viewBox="0 0 16 16">
+                                <path
+                                    d="M5.884 6.68a.5.5 0 1 0-.768.64L7.349 10l-2.233 2.68a.5.5 0 0 0 .768.64L8 10.781l2.116 2.54a.5.5 0 0 0 .768-.641L8.651 10l2.233-2.68a.5.5 0 0 0-.768-.64L8 9.219l-2.116-2.54z" />
+                                <path
+                                    d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z" />
+                            </svg>
+                            <div class="text-center ">
+                                Logs
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="block2" class="d-flex flex-column  block-dims ">
+
+                    <!-- SYSTEM -->
+                    <div id="system_btn" class="flex-fill-1 bg-warning border btn">
+                        <div class="d-flex flex-column h-100 align-items-center justify-content-center text-white ">
+
+                            <svg width="35" height="35" fill="currentColor" class="bi bi-cpu" viewBox="0 0 16 16">
+                                <path
+                                    d="M5 0a.5.5 0 0 1 .5.5V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2h1V.5a.5.5 0 0 1 1 0V2A2.5 2.5 0 0 1 14 4.5h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14v1h1.5a.5.5 0 0 1 0 1H14a2.5 2.5 0 0 1-2.5 2.5v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14h-1v1.5a.5.5 0 0 1-1 0V14A2.5 2.5 0 0 1 2 11.5H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2v-1H.5a.5.5 0 0 1 0-1H2A2.5 2.5 0 0 1 4.5 2V.5A.5.5 0 0 1 5 0zm-.5 3A1.5 1.5 0 0 0 3 4.5v7A1.5 1.5 0 0 0 4.5 13h7a1.5 1.5 0 0 0 1.5-1.5v-7A1.5 1.5 0 0 0 11.5 3h-7zM5 6.5A1.5 1.5 0 0 1 6.5 5h3A1.5 1.5 0 0 1 11 6.5v3A1.5 1.5 0 0 1 9.5 11h-3A1.5 1.5 0 0 1 5 9.5v-3zM6.5 6a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z" />
+                            </svg>
+
+                            <div class="text-center ">
+                                System
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- DASHBOARD -->
+                    <div id="dashboard_btn" class="flex-fill-1 bg-secondary border btn">
+                        <div class="d-flex flex-column h-100 align-items-center justify-content-center  text-white">
+                            <svg width="35" height="35" fill="currentColor" class="bi bi-graph-up" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M0 0h1v15h15v1H0V0zm10 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V4.9l-3.613 4.417a.5.5 0 0 1-.74.037L7.06 6.767l-3.656 5.027a.5.5 0 0 1-.808-.588l4-5.5a.5.5 0 0 1 .758-.06l2.609 2.61L13.445 4H10.5a.5.5 0 0 1-.5-.5z" />
+                            </svg>
+                            <div class="text-center ">
+                                Dashboard
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OTA -->
+                    <div id="ota_btn" class="flex-fill-1 bg-primary border btn">
+                        <div class="d-flex flex-column h-100 align-items-center justify-content-center text-white">
+                            <svg width="35" height="35" fill="currentColor" class="bi bi-cloud-plus" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd"
+                                    d="M8 5.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 .5-.5z" />
+                                <path
+                                    d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383zm.653.757c-.757.653-1.153 1.44-1.153 2.056v.448l-.445.049C2.064 6.805 1 7.952 1 9.318 1 10.785 2.23 12 3.781 12h8.906C13.98 12 15 10.988 15 9.773c0-1.216-1.02-2.228-2.313-2.228h-.5v-.5C12.188 4.825 10.328 3 8 3a4.53 4.53 0 0 0-2.941 1.1z" />
+                            </svg>
+                            <div class="text-center ">
+                                OTA
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="settings" class="d-none position-absolute">
+            <div class="data-dims border border-danger">
+                settingssadfasfdsadf
+            </div>
+        </div>
+        <div id="database" class="d-none position-absolute">
+            <div class="data-dims border border-danger">
+                databasedatabasedatabase
+            </div>
+        </div>
+        <div id="logs" class="d-none position-absolute">
+            <div class="data-dims border border-danger">
+                logslogslogslogs
+            </div>
+        </div>
+        <div id="system" class="d-none position-absolute">
+            <div class="data-dims border border-danger">
+                systemsystemsystem
+            </div>
+        </div>
+        <div id="dashboard" class="d-none position-absolute">
+            <div class="data-dims border border-danger">
+                dashboarddashboarddashboard
+            </div>
+        </div>
+        <div id="ota" class="d-none position-absolute">
+            <div class="data-dims border border-danger">
+                otaotaota
+            </div>
+        </div>
+
+    </div>
+</body>
+
+
+</html>

@@ -12,36 +12,44 @@ module.exports = {
 
     entry: {
         login: "./src/login/login.js",
+        main: "./src/main/menu/menu.js"
     },
 
     output: {
         path: __dirname + "/build",
         filename: "[name].js",
         clean: true,
-    },    
+    },
 
-    plugins: 
-    [
+    plugins: [
         new HtmlWebpackPlugin({
+            chunks: ['login'],
             template: "./src/login/login.html",
             filename: 'login.html',
             title: 'Login common',
+            favicon: "./src/favicon.png"
         }),
-  
+
+        new HtmlWebpackPlugin({
+            chunks: ['main'],
+            template: "./src/main/main.html",
+            filename: 'main.html',
+            title: 'Main common',
+            favicon: "./src/favicon.png"
+        }),
+
         new MiniCssExtractPlugin({
             filename: "[name].css",
         }),
-  
+
         new PurgeCSSPlugin({
-        paths: glob.sync(`${PATHS.src}/**/*`,  { nodir: true }),
+            paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
         }),
+
     ],
 
-    module: 
-    {
-        rules: 
-        [
-            {
+    module: {
+        rules: [{
                 test: /\.css$/,
                 use: [
                     MiniCssExtractPlugin.loader,
@@ -57,20 +65,20 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|svg|jpg|jpeg|gif)$/i,        
-                type: 'asset/resource',        
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/i,        
-                type: 'asset/resource',        
+                test: /\.(woff|woff2|eot|ttf|otf)$/i,
+                type: 'asset/resource',
             },
             {
-                test: /\.(csv|tsv)$/i,        
-                use: ['csv-loader'],        
-            },        
-            {        
-                test: /\.xml$/i,        
-                use: ['xml-loader'],        
+                test: /\.(csv|tsv)$/i,
+                use: ['csv-loader'],
+            },
+            {
+                test: /\.xml$/i,
+                use: ['xml-loader'],
             },
         ],
     },
