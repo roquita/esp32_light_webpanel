@@ -7,11 +7,11 @@
 }
 
 #block1>div:hover {
-    transform: scale(0.95);
+    transform: scale(0.9);
 }
 
 #block2>div:hover {
-    transform: scale(0.95);
+    transform: scale(0.9);
 }
 
 .data-dims {
@@ -62,10 +62,10 @@
         font-size: small;
     }
     #block1>div:hover {
-        transform: scale(0.9);
+        transform: scale(0.7);
     }
     #block2>div:hover {
-        transform: scale(0.9);
+        transform: scale(0.7);
     }
     .data-dims {
         height: 100vh;
