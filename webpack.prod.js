@@ -8,7 +8,7 @@ module.exports = merge(common, {
 
     mode: 'production',
 
-    devtool: 'source-map',
+    //devtool: 'source-map',
 
     optimization: {
 
@@ -20,6 +20,7 @@ module.exports = merge(common, {
     },
 
     plugins: [
+        /*
         new CompressionPlugin({
             exclude: /.map$/,
             deleteOriginalAssets: 'keep-source-map',
@@ -29,5 +30,6 @@ module.exports = merge(common, {
             threshold: 0,
             minRatio: 0.8
         })
+        */
     ]
 });
