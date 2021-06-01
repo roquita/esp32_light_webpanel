@@ -384,13 +384,17 @@
                 fw-bold text-success border border-success bg-white">
                     Home/Database/
                 </div>
-                <div class="d-flex flex-row justify-content-center mb-5
+                <div class="d-flex flex-row justify-content-around mb-5
                     position-absolute bottom-0 start-50 translate-middle-x
                     " style="width: 100%;">
-                    <button class="btn btn-success btn-lg col-4">
-                        Get CSV
+                    <button class="btn btn-success btn-lg col-3">
+                        Load
                     </button>
-                    <div class="col-1"></div>
+
+                    <button class="btn btn-success btn-lg col-4">
+                        Download
+                    </button>
+
                     <button class="btn btn-success btn-lg col-4">
                         Clean all
                     </button>
@@ -776,16 +780,20 @@
                 fw-bold text-danger border border-danger bg-white">
                     Home/Logs/
                 </div>
-                <div class="d-flex flex-row justify-content-center mb-5
+                <div class="d-flex flex-row justify-content-around mb-5
                 position-absolute bottom-0 start-50 translate-middle-x
                 " style="width: 100%;">
+                    <button class="btn btn-danger btn-lg col-3">
+                    Load
+                </button>
+
                     <button class="btn btn-danger btn-lg col-4">
-                        Get CSV
-                    </button>
-                    <div class="col-1"></div>
+                    Download
+                </button>
+
                     <button class="btn btn-danger btn-lg col-4">
-                        Clean all
-                    </button>
+                    Clean all
+                </button>
                 </div>
                 <div class="overflow-auto">
                     <table class="table table-hover 
@@ -1491,12 +1499,202 @@
 
         <!---------------- SYSTEM ------------------------->
         <div id="system" class="d-none position-absolute">
-            <div class="data-dims ">
+            <div class="data-dims p-1 d-flex flex-column">
                 <div class="position-absolute start-0 top-0 h6 my-2 mx-4 p-1 
                 fw-bold text-warning border border-warning bg-white">
                     Home/System/
                 </div>
 
+                <div class="overflow-auto mt-5 ">
+                    <div class="d-flex flex-row flex-wrap justify-content-center">
+                        <div class=" border border-2 border-warning rounded p-2 m-2" style="width: 25rem;">
+                            <div class="p-2 h2 text-center text-warning fw-bold border-bottom border-warning">
+                                ENDPOINT
+                            </div>
+                            <div class="p-1 border-bottom border-warning">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Protocol</span>
+                                    <input placeholder="MQTT" type="text" class="form-control" aria-label="Disabled  example input" aria-describedby="inputGroup-sizing-default " disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Url</span>
+                                    <input placeholder="www.pachabot.com" type="text" class="form-control" aria-label="Disabled  example input" aria-describedby="inputGroup-sizing-default " disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Port</span>
+                                    <input placeholder="80" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Topic</span>
+                                    <input placeholder="topic_app" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                            </div>
+                            <div class="p-2 pt-3 border-bottom border-warning">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Authentication</span>
+                                    <input placeholder="Simple" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Username</span>
+                                    <input placeholder="my_username" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Password</span>
+                                    <input placeholder="my_password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                            </div>
+                            <div class="p-2 pt-3 ">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Connectivity</span>
+                                    <input placeholder="WiFi" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">SSID</span>
+                                    <input placeholder="wifi_ssid" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Password</span>
+                                    <input placeholder="wifi_password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <div class=" border border-2 border-warning rounded p-2 m-2" style="width: 25rem;">
+                            <div class="p-1 h2 text-center text-warning fw-bold">
+                                SENSORS
+                            </div>
+                            <div class="">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1 " type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="p-2 h2 text-center text-warning fw-bold ">
+                                ACTUATORS
+                            </div>
+                            <div class="">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item ">
+                                        <input class="form-check-input me-1 " type="checkbox" value="" aria-label="..." checked disabled> First checkbox
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> Second checkbox
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> Third checkbox
+                                    </li>
+                                    <li class="list-group-item">
+                                        <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> Fourth checkbox
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class=" border border-2 border-warning rounded p-2 m-2" style="width: 25rem;">
+                            <div class="p-2 h2 text-center text-warning fw-bold ">
+                                INTERVAL
+                            </div>
+                            <div class=" ">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Minutes</span>
+                                    <input placeholder="minutes_interval" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Seconds</span>
+                                    <input placeholder="seconds_interval" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pb-2 border-bottom border-warning">
+                            </div>
+                            <div class="p-2 h3 text-center text-warning fw-bold ">
+                                SELF ACCESS POINT
+                            </div>
+                            <div class=" ">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">SSID</span>
+                                    <input placeholder="ap_ssid" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">Password</span>
+                                    <input placeholder="ap_password" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pb-2 border-bottom border-warning">
+                            </div>
+                            <div class="p2- h3 text-center text-warning fw-bold ">
+                                OTA
+                            </div>
+                            <div class="mb-2">
+                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> Manual OTA
+                            </div>
+                            <div class="my-2">
+                                <input class="form-check-input me-1" type="checkbox" value="" aria-label="..." checked disabled> Automatic OTA
+                            </div>
+                            <div class=" ">
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">MQTT url</span>
+                                    <input placeholder="ota_url" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">MQTT port</span>
+                                    <input placeholder="ota_port" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">MQTT topic</span>
+                                    <input placeholder="ota_topic" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text bg-warning text-dark" id="inputGroup-sizing-default">HTTP uri</span>
+                                    <input placeholder="248.253.172.26:4000/path" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" disabled>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-center pb-2 ">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
 
             </div>
         </div>
