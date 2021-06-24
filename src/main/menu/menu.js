@@ -1,14 +1,21 @@
 // Css and Scss added to entry point
+import "bootstrap/js/dist/modal";
+
 import "./menu.css";
 import "./bootstrap.scss";
 
+// Js files added to entry poitn
+
+
 // branches of entry point
-import "../dashboard/dashboard";
-import "../database/database";
-import "../logs/logs";
-import "../ota/ota";
+import "../download/download";
 import "../settings/settings";
 import "../system/system";
+import "../zoom/zoom";
+
+
+//DESCOMENTAR CODIGO PARA TENER UNA VENTANA PROPIA PARA DESCARGA, EN LUGAR DE SOLO UNA ALARMA.
+// EN INDEX.HTML TAMBIEN DESCOMENTAR LA SECCION "DESCARGA VIEW" Y COMENTAR "MODAL FADE"
 
 //constantes
 const xsm_breakpoint = 300;
@@ -16,134 +23,111 @@ const sm_breakpoint = 576;
 const md_breakpoint = 768;
 const lg_breakpoint = 992;
 const xl_breakpoint = 1200;
-const xxl_breakpoint = 1400;
-const main_url = "main.html";
 
-// views
-var menu = document.getElementById("menu");
-var settings = document.getElementById("settings");
-var database = document.getElementById("database");
-var logs = document.getElementById("logs");
-var system = document.getElementById("system");
-var dashboard = document.getElementById("dashboard");
-var ota = document.getElementById("ota");
-// buttons
-var settings_btn = document.getElementById("settings_btn");
-var database_btn = document.getElementById("database_btn");
-var logs_btn = document.getElementById("logs_btn");
-var system_btn = document.getElementById("system_btn");
-var dashboard_btn = document.getElementById("dashboard_btn");
-var ota_btn = document.getElementById("ota_btn");
-
-function hide_all() {
-    settings.classList.add("d-none");
-    database.classList.add("d-none");
-    logs.classList.add("d-none");
-    system.classList.add("d-none");
-    dashboard.classList.add("d-none");
-    ota.classList.add("d-none");
-};
-settings_btn.onclick = function() {
-
-    var window_width = window.innerWidth;
-    if (window_width > lg_breakpoint) {
-        menu.classList.remove("d-none");
-    } else {
-        menu.classList.add("d-none");
-    }
-    hide_all();
-    settings.classList.remove("d-none");
-
-};
-database_btn.onclick = function() {
-    var window_width = window.innerWidth;
-    if (window_width > lg_breakpoint) {
-        menu.classList.remove("d-none");
-    } else {
-        menu.classList.add("d-none");
-    }
-    hide_all();
-    database.classList.remove("d-none");
-};
-logs_btn.onclick = function() {
-    var window_width = window.innerWidth;
-    if (window_width > lg_breakpoint) {
-
-        menu.classList.remove("d-none");
-    } else {
-        menu.classList.add("d-none");
-    }
-    hide_all();
-    logs.classList.remove("d-none");
-};
-system_btn.onclick = function() {
-    var window_width = window.innerWidth;
-    if (window_width > lg_breakpoint) {
-
-        menu.classList.remove("d-none");
-    } else {
-        menu.classList.add("d-none");
-    }
-    hide_all();
-    system.classList.remove("d-none");
-};
-dashboard_btn.onclick = function() {
-    var window_width = window.innerWidth;
-    if (window_width > lg_breakpoint) {
-
-        menu.classList.remove("d-none");
-    } else {
-        menu.classList.add("d-none");
-    }
-    hide_all();
-    dashboard.classList.remove("d-none");
-};
-ota_btn.onclick = function() {
-    var window_width = window.innerWidth;
-    if (window_width > lg_breakpoint) {
-
-        menu.classList.remove("d-none");
-    } else {
-        menu.classList.add("d-none");
-    }
-    hide_all();
-    ota.classList.remove("d-none");
-};
-
-// ON LOAD 
-window.onload = function() {
-    document.getElementsByTagName("html")[0].style.visibility = "visible";
-
-    history.replaceState(null, null, location.pathname + "#myhash");
-    history.pushState(null, null, location.pathname);
-
-};
-window.addEventListener("popstate", function() {
-    console.log("hash:", location.hash);
-    if (location.hash === "#myhash") {
-
-        history.replaceState(null, null, location.pathname);
-        setTimeout(function() {
-            location.replace(main_url);
-        }, 0);
-    }
-});
+const option_configuracion_icon_color = "text-danger";
+//const option_descarga_icon_color = "text-danger";
+const option_dektop_icon_color = "text-danger";
+const view_invisibility = "d-none";
 
 //menu on Resize
 function menu_onResize_callback() {
     var window_width = window.innerWidth;
-    if (window_width > lg_breakpoint) {
-        menu.classList.remove("d-none");
+    var window_height = window.innerHeight;
+    var menu = document.getElementById("menu");
+    var configuracion_view_helper = document.getElementById("configuracion_view_helper");
+    var sistema_view_helper = document.getElementById("sistema_view_helper");
+
+    console.log(window_height);
+    if (window_width < lg_breakpoint) {
+        menu.removeAttribute("style");
+        menu.classList.add("fixed-bottom");
+        configuracion_view_helper.setAttribute("style", `height:${menu.offsetHeight}px`);
+        sistema_view_helper.setAttribute("style", `height:${menu.offsetHeight}px`);
     } else {
-        var menu_is_not_active = settings.classList.contains("d-none") && system.classList.contains("d-none") &&
-            database.classList.contains("d-none") && dashboard.classList.contains("d-none") &&
-            logs.classList.contains("d-none") && ota.classList.contains("d-none");
-
-        if (menu_is_not_active === false) {
-            menu.classList.add("d-none");
-        }
+        menu.setAttribute("style", "height:100vh");
+        menu.classList.remove("fixed-bottom");
+        configuracion_view_helper.removeAttribute("style");
+        sistema_view_helper.removeAttribute("style");
     }
-
-
 }
 window.addEventListener('resize', menu_onResize_callback);
+
+//menu on load
+menu_onResize_callback();
+
+
+//botones
+
+var configuracionOption = document.getElementById("configuracion_option");
+var configuracionOptionClass = configuracionOption.classList;
+
+var zoomOption = document.getElementById("zoom_option");
+
+//var descargaOption = document.getElementById("descarga_option");
+//var descargaOptionClass = descargaOption.classList;
+
+var sistemaOption = document.getElementById("sistema_option");
+var sistemaOptionClass = sistemaOption.classList;
+
+
+//vistas 
+
+var configuracionView = document.getElementById("configuracion_view");
+var configuracionViewClass = configuracionView.classList;
+
+//var descargaView = document.getElementById("descarga_view");
+//var descargaViewClass = descargaView.classList;
+
+var sistemaView = document.getElementById("sistema_view");
+var sistemaViewClass = sistemaView.classList;
+
+
+//callbacks
+
+function configuracionOption_onClick_callback() {
+    configuracionOptionClass.add(option_configuracion_icon_color);
+    //descargaOptionClass.remove(option_descarga_icon_color);
+    sistemaOptionClass.remove(option_dektop_icon_color);
+
+    configuracionViewClass.remove(view_invisibility);
+    //descargaViewClass.add(view_invisibility);
+    sistemaViewClass.add(view_invisibility);
+}
+
+function zoomOption_onClick_callback() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+function sistemaOption_onClick_callback() {
+    configuracionOptionClass.remove(option_configuracion_icon_color);
+    //descargaOptionClass.remove(option_descarga_icon_color);
+    sistemaOptionClass.add(option_dektop_icon_color);
+
+    configuracionViewClass.add(view_invisibility);
+    //descargaViewClass.add(view_invisibility);
+    sistemaViewClass.remove(view_invisibility);
+}
+
+function descargaOption_onClick_callback() {
+    configuracionOptionClass.remove(option_configuracion_icon_color);
+    //descargaOptionClass.add(option_descarga_icon_color);
+    sistemaOptionClass.remove(option_dektop_icon_color);
+
+    configuracionViewClass.add(view_invisibility);
+    //descargaViewClass.remove(view_invisibility);
+    sistemaViewClass.add(view_invisibility);
+}
+
+configuracionOption.addEventListener('click', configuracionOption_onClick_callback);
+zoomOption.addEventListener('click', zoomOption_onClick_callback);
+sistemaOption.addEventListener('click', sistemaOption_onClick_callback);
+//descargaOption.addEventListener('click', descargaOption_onClick_callback);
+
+//menu option on load
+configuracionOption_onClick_callback();

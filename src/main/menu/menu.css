@@ -1,32 +1,21 @@
-body {
-    background: whitesmoke;
-    height: 100vh;
+#menu_row div {
+    transition: transform .1s ease-in-out;
 }
 
-.flex-fill-1 {
-    flex: 1;
+#menu_row button {
+    transition: transform .1s ease-in-out;
 }
 
-.flex-fill-2 {
-    flex: 2;
+#menu_row div:hover {
+    border-color: red;
+    border-style: solid;
+    border-width: thin;
+    transform: scale(0.9);
 }
 
-.bg-purple {
-    background: purple;
-}
-
-#block1>div {
-    transition: transform 0.2s ease-in-out;
-}
-
-#block1>div>div>* :hover {
-    transform: scale(1.0);
-}
-
-#block2>div {
-    transition: transform 0.2s ease-in-out;
-}
-
-#block2>div>div>* :hover {
-    transform: scale(1.0);
+#menu_row button:hover {
+    border-color: red;
+    border-style: solid;
+    border-width: thin;
+    transform: scale(0.9);
 }

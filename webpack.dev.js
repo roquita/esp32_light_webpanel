@@ -7,10 +7,9 @@ module.exports = merge(common, {
 
     devtool: 'inline-source-map',
 
-    devServer: 
-    {
+    devServer: {
         //contentBase: __dirname + "/build",
-        index: 'login.html',
+        index: 'index.html',
         compress: true,
         port: 9000,
 

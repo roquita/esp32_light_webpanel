@@ -1,0 +1,15 @@
+#interfaces button {
+    transition: transform .1s ease-in-out;
+    background-color: #C3C0BF;
+}
+
+#interfaces button:hover {
+    border-color: purple;
+    border-style: solid;
+    border-width: thin;
+    transform: scale(0.9);
+}
+
+#title_interfaces {
+    color: purple
+}

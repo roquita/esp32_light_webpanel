@@ -1,3 +1,3 @@
 // Css and Scss added to entry point
-import "./ota.css";
+import "./zoom.css";
 import "./bootstrap.scss";

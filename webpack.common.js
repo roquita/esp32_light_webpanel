@@ -11,35 +11,27 @@ const PATHS = {
 module.exports = {
 
     entry: {
-        login: "./src/login/login.js",
-        main: "./src/main/menu/menu.js"
+        index: "./src/main/menu/menu.js"
     },
 
     output: {
         path: __dirname + "/build",
-        filename: "[name].js",
+        filename: "js/[name].js",
         clean: true,
     },
 
     plugins: [
-        new HtmlWebpackPlugin({
-            chunks: ['login'],
-            template: "./src/login/login.html",
-            filename: 'login.html',
-            title: 'Login common',
-            favicon: "./src/favicon.png"
-        }),
 
         new HtmlWebpackPlugin({
-            chunks: ['main'],
+            chunks: ['index'],
             template: "./src/main/main.html",
-            filename: 'main.html',
+            filename: '[name].html',
             title: 'Main common',
             favicon: "./src/favicon.png"
         }),
 
         new MiniCssExtractPlugin({
-            filename: "[name].css",
+            filename: "css/[name].css",
         }),
 
         new PurgeCSSPlugin({
